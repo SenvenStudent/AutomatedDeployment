@@ -33,17 +33,17 @@ export default [
     redirect: '/home',
     component: Main,
     meta: {
-      hideInMenu: true,
-      notCache: true
+      hideInMenu: false,
+      notCache: false
     },
     children: [
       {
         path: '/home',
         name: 'home',
         meta: {
-          hideInMenu: true,
+          hideInMenu: false,
           title: '首页',
-          notCache: true,
+          notCache: false,
           icon: 'md-home'
         },
         component: () => import('@/view/single-page/home')
@@ -52,79 +52,40 @@ export default [
   },
   {
     path: '/components',
-    name: 'deployment',
+    name: 'application',
     meta: {
       icon: 'logo-buffer',
-      title: '自动部署'
+      title: '应用'
     },
     component: Main,
     children: [
 
       {
         path: 'tables_page',
-        name: 'tables_page',
+        name: 'application_list',
         meta: {
           icon: 'md-grid',
-          title: '多功能表格'
+          title: '应用列表'
         },
-        component: () => import('@/view/components/tables/tables.vue')
+        component: () => import('@/view/components/application/application.vue')
       },
-      {
-        path: 'markdown_page',
-        name: 'markdown_page',
-        meta: {
-          icon: 'logo-markdown',
-          title: 'Markdown编辑器'
-        },
-        component: () => import('@/view/components/markdown/markdown.vue')
-      },
-      {
-        path: 'editor_page',
-        name: 'editor_page',
-        meta: {
-          icon: 'ios-create',
-          title: '富文本编辑器'
-        },
-        component: () => import('@/view/components/editor/editor.vue')
-      }
-    ]
-  },
-  {
-    path: '/components',
-    name: 'log',
-    meta: {
-      icon: 'logo-buffer',
-      title: '日志'
-    },
-    component: Main,
-    children: [
-
       {
         path: 'tables_page',
-        name: 'tables_page',
-        meta: {
-          icon: 'md-grid',
-          title: '多功能表格'
-        },
-        component: () => import('@/view/components/tables/tables.vue')
-      },
-      {
-        path: 'markdown_page',
-        name: 'markdown_page',
+        name: 'application_config',
         meta: {
           icon: 'logo-markdown',
-          title: 'Markdown编辑器'
+          title: '全局配置'
         },
-        component: () => import('@/view/components/markdown/markdown.vue')
+        component: () => import('@/view/components/application/application.vue')
       },
       {
-        path: 'editor_page',
-        name: 'editor_page',
+        path: 'tables_page',
+        name: 'log_config',
         meta: {
-          icon: 'ios-create',
-          title: '富文本编辑器'
+          icon: 'logo-markdown',
+          title: '日志'
         },
-        component: () => import('@/view/components/editor/editor.vue')
+        component: () => import('@/view/components/application/application.vue')
       }
     ]
   },
